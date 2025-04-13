@@ -1,22 +1,64 @@
 ---
 import { Image } from 'astro:assets';
 import Logo from '../assets/logo.svg';
+import SearchLoop from '../assets/search-normal.svg';
 ---
 
 <nav>
-    <a href="/">
+    <a href="/" class="container_logo">
         <Image src={Logo} alt="Logo" />
     </a>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+    <button class="search_loop"><Image src={SearchLoop} class="test" alt="Searchloop"></button>
+    <ul class="burger_container">
+        <li><span class="burger_line"></span></li>
+        <li><span class="burger_line"></span></li>
+        <li><span class="burger_line"></span></li>
     </ul>
 </nav>
 
 <style>
     img{
-        width: 50px;
-        height: 50px;
+        width: 8rem;
+        height: 6rem;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem;
+        border-bottom: #b6b2b2 solid 0.1rem;
+    }
+
+    .container_logo {
+        margin-right: auto;
+    }
+
+    .burger_container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+		margin: 0;
+    }
+
+    .burger_line {
+        display: block;
+        width: 2.5rem;
+        border: solid #000 .1rem;
+        border-radius: 1rem;    
+    }
+
+    .search_loop {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        padding: 0 2rem;
+    }
+
+    .test {
+        width: 3rem;
+        height: 3rem;
     }
 </style>
